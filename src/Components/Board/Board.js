@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import TopRow from '../Rows/TopRow'
 import MiddleRow from '../Rows/MiddleRow'
+import BottomRow from '../Rows/BottomRow'
 import {connect} from 'react-redux'
 import {updateCross, updateCircle} from '../../ducks/player_reducer'
+import WinCheck from '../WinCheck/WinCheck';
 
 
 
@@ -24,6 +26,8 @@ class Board extends Component {
                 <button onClick={this.handleCircle}>Click here for O</button>
                 <TopRow />
                 <MiddleRow />
+                <bottomRow />
+                <WinCheck />
                 
                 
             </div>

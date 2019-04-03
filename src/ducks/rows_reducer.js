@@ -9,7 +9,6 @@ const UPDATE_TOP_ROW = 'UPDATE_TOP_ROW'
 const UPDATE_MIDDLE_ROW = 'UPDATE_MIDDLE_ROW'
 const UPDATE_BOTTOM_ROW = 'UPDATE_BOTTOM_ROW'
 const CLEAR_BOARD = "CLEAR_BOARD"
-const WINNER_CHECKER = "WINNER_CHECKER"
 
 export function updateTopRow(topRow){
     return {
@@ -37,11 +36,7 @@ export function clearBoard(){
         type: CLEAR_BOARD
     }
 }
-export function winChecker(){
-    return{
-        type: WINNER_CHECKER
-    }
-}
+
 export default function rows_reducer(state = initialState, action) {
     const {type, payload} = action
     switch(type) {
@@ -56,11 +51,6 @@ export default function rows_reducer(state = initialState, action) {
             return {...state, bottomRow}
         case CLEAR_BOARD:
             return {...state, topRow:[0,0,0], middleRow:[0,0,0], bottomRow:[0,0,0]}
-        case WINNER_CHECKER:
-            return {
-                
-
-            }
         default:
             return state
     }
